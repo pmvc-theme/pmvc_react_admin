@@ -1,0 +1,17 @@
+<script>
+(function(){
+   var time;
+   var retry=0;
+   time = setInterval(function(){
+        if (retry > 5) {
+            clearInterval(time);
+        }
+        if ('undefined' !== typeof app && 'undefined' !== typeof ReactDOM) {
+            var data = <?php echo json_encode($this->get())?>;
+            ReactDOM.render(new app(data), document.getElementById('app'));
+            clearInterval(time);
+        }
+        retry++;
+   },300);
+}());
+</script>

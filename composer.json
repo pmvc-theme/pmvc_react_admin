@@ -1,0 +1,14 @@
+{
+    "name": "pmvc-theme/pmvc_react_admin",
+    "description": "pmvc admin template",
+    "type": "library",
+    "keywords": ["admin", "theme", "pmvc", "react"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hill",
+            "email": "hill@kimo.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

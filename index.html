@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="http://i.intw.tw/cdn/cdn.css?lib/pure/0.6.0/pure.css&lib/pure/0.6.0/grids-responsive.css">
+<link rel="stylesheet" type="text/css" href="http://semantic-ui.com/dist/semantic.min.css">
+<style>
+<?php echo $this['run_css']?>
+</style>
+</head>
+<body style="background:#ffe600;">
+<div id="app"><?php echo $this['run']?></div>
+</body>
+<script>var REACT_DATA=<?php echo $this['react_data']?></script>
+<script defer src="<?php echo $this['assets_root']?>/vendor.bundle.js"></script>
+<script defer src="<?php echo $this['assets_root']?>/bundle.js"></script>
+</html>
