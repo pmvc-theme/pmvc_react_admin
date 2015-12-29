@@ -10,5 +10,8 @@
             "email": "hill@kimo.com"
         }
     ],
+    "require": {
+        "pmvc-plugin/view_react": "*"
+    },
     "minimum-stability": "dev"
 }
