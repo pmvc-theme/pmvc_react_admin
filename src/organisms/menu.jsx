@@ -1,15 +1,15 @@
 import React, {Component} from 'react'; 
-import { reactStyle, Rail, Segment } from 'react-atomic-molecule'; 
+import { reactStyle, Menu, Segment } from 'react-atomic-molecule'; 
 
-class Menu extends Component
+class MyMenu extends Component
 {
     render(){
        return (
-            <Rail styles={Styles.container}>
-                <Segment>
-                    I'm menu
-                </Segment>
-            </Rail>
+            <Menu 
+                className="inverted vertical" 
+                styles={Styles.container}>
+                    {this.props.children}
+            </Menu>
        );  
     }
 }
@@ -19,4 +19,4 @@ let Styles = {
     })
 };
 
-export default Menu;
+export default MyMenu;

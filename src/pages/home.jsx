@@ -1,26 +1,36 @@
 import React, {Component} from 'react'; 
-import Header from '../organisms/header'; 
+import TwoColumnLayout from '../templates/two_columns'; 
 import Menu from '../organisms/menu'; 
-import { reactStyle, Segment } from 'react-atomic-molecule'; 
-class Home extends Component
+import { reactStyle, Item } from 'react-atomic-molecule'; 
+
+class MyMenu extends Component
 {
    render(){
         return (
-            <div>
-                <Header />
-                <Segment styles={Styles.container} styleOrder={2}>
-                    <Menu />
-                    I'm home for admin
-                </Segment>
-            </div>
+            <Menu>
+                <Item><a href="http://tw.yahoo.com">test1</a></Item>
+                <Item>test2</Item>
+                <Item>test3</Item>
+            </Menu>
         );  
     }
 }
 
-let Styles = {
-    container: reactStyle({
-        margin: '0 10px 0 340px',
-    })
-};
+
+
+class Home extends Component
+{
+   render(){
+        var menu = <MyMenu />;
+        return (
+            <TwoColumnLayout 
+                menu={menu}
+                content={"I'm home for admin"} 
+                brand={"brand"}
+                nav={"nav"}
+            />
+        );  
+    }
+}
 
 export default Home;

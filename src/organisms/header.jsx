@@ -8,8 +8,8 @@ class Header extends Component
    render(){
        return (
             <SemanticUI styles={Styles.container}>
-                <Brand>PMVC ADMIN</Brand>
-                <Nav>I'm Nav</Nav>
+                <Brand>{this.props.brand}</Brand>
+                <Nav>{this.props.nav}</Nav>
             </SemanticUI>
        );  
     }
