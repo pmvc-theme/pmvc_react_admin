@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import { reactStyle, Rail, Segment } from 'react-atomic-molecule'; 
 
-class Menu extends Component
+class MenuRail extends Component
 {
     render(){
        return (
@@ -17,4 +17,4 @@ let Styles = {
     })
 };
 
-export default Menu;
+export default MenuRail;
