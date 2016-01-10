@@ -4,17 +4,14 @@ import Immutable from 'immutable';
 import {ReduceStore} from 'flux/utils';
 import dispatcher from '../actions/dispatcher';
 
-const PageState = Immutable.Record({
-  path: undefined
-});
-
+const PageState = Immutable.Map();
 
 class PageStore extends ReduceStore
 {
 
   getInitialState()
   {
-      return PageState();
+      return PageState;
   }
 
   reduce (state, action)
@@ -23,6 +20,8 @@ class PageStore extends ReduceStore
         {
             case 'page/go':
                return state.set('path', action.params.path);
+            case 'config/set':
+               return state.merge(action.params);
         }
   }
 

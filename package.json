@@ -2,7 +2,7 @@
   "name": "pmvc_react_admin",
   "version": "0.0.0",
   "description": "pmvc admin theme",
-  "main": "server.js",
+  "main": "./src/index.js",
   "repository": "pmvc-theme/pmvc_react_admin",
   "keywords": [
     "react",
