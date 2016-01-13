@@ -7,26 +7,19 @@ import {
 import PageStore from '../stores/pageStore';
 import {dispatch} from '../actions/dispatcher';
 
-class Ajax extends Component
+class AjaxLink extends Component
 {
 
     handleOnClick(e) {
         e.preventDefault();
-        let self = this;
         let href = e.currentTarget.href;
-        let url = href.replace('index.php','json.php')+'?r='+((new Date()).getTime());
-        require(['superagent'],function(req){ 
-           req.get(url)
-              .withCredentials()
-              .end(function(res){
-                    let json = JSON.parse(res.text);
-                    dispatch({
-                        type: 'config/set',
-                        params: json
-                    });
-                    history.pushState('','',href);
-               });
+        dispatch({
+            type: 'ajax',
+            params: {
+                url: href
+            }
         });
+        history.pushState('','',href);
     }
 
     render() {
@@ -47,4 +40,4 @@ class Ajax extends Component
 
 }
 
-export default Ajax;
+export default AjaxLink;
