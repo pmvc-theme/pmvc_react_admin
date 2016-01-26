@@ -11,7 +11,12 @@ class TwoColumnLayout extends Component
                     brand={this.props.brand}
                     nav={this.props.nav}
                 />
-                <Segment styles={Styles.container} styleOrder={2}>
+                <Segment
+                    style={this.props.style}
+                    className={this.props.contentClassName}
+                    styles={[Styles.container,this.props.styles]}
+                    styleOrder={2}
+                >
                     <MenuRail>{this.props.menu}</MenuRail>
                     {this.props.content}
                 </Segment>
