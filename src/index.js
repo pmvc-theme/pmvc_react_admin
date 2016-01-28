@@ -8,6 +8,7 @@ export { default as  AdminForm } from './organisms/form';
 export { default as  FormTextarea } from './organisms/form_textarea';
 export { default as  FormButton } from './organisms/form_button';
 export { default as  FormPreview } from './organisms/form_preview';
+export { default as  FormList } from './organisms/form_list';
 
 // Stores
 export { default as  pageStore } from './stores/pageStore';
