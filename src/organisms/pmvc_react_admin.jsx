@@ -1,5 +1,5 @@
 import React, {Component} from 'react'; 
-import {AjaxPage} from 'react-molecule-ajax';
+import {AjaxPage} from 'react-organism-ajax';
 import {dispatch} from '../actions/dispatcher';
 
 class PMVCReactAdmin extends Component

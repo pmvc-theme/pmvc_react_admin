@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import { 
     reactStyle, 
     Message, 
+    mixClass,
     Button
 } from 'react-atomic-molecule'; 
-import {AjaxForm} from 'react-molecule-ajax';
-import mixClass from 'classnames';
+import {AjaxForm} from 'react-organism-ajax';
 
 export default class AdminForm extends Component
 {

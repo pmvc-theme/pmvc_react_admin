@@ -1,7 +1,8 @@
 import React, {Component} from 'react'; 
+import ReactDOM from 'react-dom';
 import { 
     reactStyle, 
-    Field, 
+   Field, 
     Message, 
     Button,
     Item,

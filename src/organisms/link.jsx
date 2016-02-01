@@ -4,7 +4,7 @@ import {
     Item, 
     SemanticUI 
     } from 'react-atomic-molecule';
-import {AjaxLink} from 'react-molecule-ajax';
+import {AjaxLink} from 'react-organism-ajax';
 
 class Link extends Component
 {
