@@ -3,9 +3,9 @@ import {
     reactStyle, 
     Field, 
     Message, 
-    Button,
-    FormattedJson
+    Button
 } from 'react-atomic-molecule'; 
+import {FormattedJson} from 'react-atomic-organism';
 import AdminForm from "./form";
 export default class FormPreview extends Component
 {

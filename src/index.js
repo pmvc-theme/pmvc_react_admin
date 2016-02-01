@@ -5,6 +5,7 @@ export { default as  TwoColumns } from './templates/two_columns';
 export { default as  Menu } from './organisms/menu';
 export { default as  Link } from './organisms/link';
 export { default as  AdminForm } from './organisms/form';
+export { default as  FormConsole } from './organisms/form_console';
 export { default as  FormTextarea } from './organisms/form_textarea';
 export { default as  FormButton } from './organisms/form_button';
 export { default as  FormPreview } from './organisms/form_preview';
