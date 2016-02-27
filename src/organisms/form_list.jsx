@@ -9,7 +9,7 @@ import {
     List
 } from 'pmvc_react_list';
 import AdminForm from "./form";
-export default class FormPreview extends Component
+export default class FormList extends Component
 {
    constructor(props)
    {   
@@ -55,4 +55,4 @@ export default class FormPreview extends Component
        );  
     }
 }
-FormPreview.defaultProps = { label: 'Preview' };
+FormList.defaultProps = { label: 'Preview' };
