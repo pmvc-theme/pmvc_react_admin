@@ -1,18 +1,22 @@
 import React, {Component} from 'react'; 
 import { 
     reactStyle, 
-    Item, 
-    SemanticUI 
+    mixClass
     } from 'react-atomic-molecule';
 import {AjaxLink} from 'react-organism-ajax';
 
 class Link extends Component
 {
+    
     render() {
+        let classes = mixClass (
+            this.props.className,
+            'item'
+        );
         return (
-            <Item>
-                <AjaxLink {...this.props}>{this.props.children}</AjaxLink>
-            </Item>
+            <AjaxLink {...this.props} 
+                className={classes}
+            />
         );  
     }
 }

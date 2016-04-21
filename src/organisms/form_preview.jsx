@@ -27,7 +27,7 @@ export default class FormPreview extends Component
            preview = (<FormattedJson atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJson>);
        }               
        return (
-            <AdminForm callBack={(json)=>{
+            <AdminForm callback={(json)=>{
                 if (json) {
                     this.setState({preview:json});
                 }

@@ -50,7 +50,7 @@ export default class FormPreview extends Component
            );
        }
        return (
-            <AdminForm ref={dom=>this.form=dom} callBack={(json)=>{
+            <AdminForm ref={dom=>this.form=dom} callback={(json)=>{
                 if (json) {
                     switch(this.state.selected){
                         case "source":
@@ -70,22 +70,22 @@ export default class FormPreview extends Component
                     this.reset();
                 }
             }.bind(this)} {...this.props} children={null}>
-            {this.props.children}
-            <TabView  onTabItemPress={(name)=>{
-                let f =ReactDOM.findDOMNode(this.form);
-                let width = f.getBoundingClientRect().width - 30;
-                this.setState({selected:name, width:width});
-                f.dispatchEvent(new Event("submit"));
-            }.bind(this)}>
-                <div name="list">
-                    {list}
-                    <Item>List</Item>
-                </div>
-                <div name="source">
-                    {preview}
-                    <Item>Source</Item>
-                </div>
-            </TabView>
+                {this.props.children}
+                <TabView  onTabItemPress={(name)=>{
+                    let f =ReactDOM.findDOMNode(this.form);
+                    let width = f.getBoundingClientRect().width - 30;
+                    this.setState({selected:name, width:width});
+                    f.dispatchEvent(new Event("submit"));
+                }.bind(this)}>
+                    <div name="list">
+                        {list}
+                        <Item>List</Item>
+                    </div>
+                    <div name="source">
+                        {preview}
+                        <Item>Source</Item>
+                    </div>
+                </TabView>
             </AdminForm>
        );  
     }

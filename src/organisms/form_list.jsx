@@ -36,7 +36,7 @@ export default class FormList extends Component
            );
        } 
        return (
-            <AdminForm callBack={(json)=>{
+            <AdminForm callback={(json)=>{
                 if (json) {
                     this.setState({preview:json});
                 }

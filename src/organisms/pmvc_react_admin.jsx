@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
-import {AjaxPage} from 'react-organism-ajax';
-import {dispatch} from '../actions/dispatcher';
+import { AjaxPage } from 'react-organism-ajax';
+import { dispatch } from '../actions/dispatcher';
+import { PopupDom } from 'react-organism-popup'; 
 
 class PMVCReactAdmin extends Component
 {
@@ -8,7 +9,8 @@ class PMVCReactAdmin extends Component
         super(props);
         this.update(this.props);
         this.state = {
-            themePath: this.props.themePath
+            themePath: this.props.themePath,
+            popup: null
         };
     }
 
@@ -22,17 +24,27 @@ class PMVCReactAdmin extends Component
     render(){
         let self = this;
         return (
-            <AjaxPage 
-                themes={this.props.themes}
-                themePath={this.state.themePath}
-                baseUrl={this.props.baseUrl}
-                callBack={function(json){
-                    self.update(json);
-                    self.setState({
-                        themePath: json.themePath    
-                    });
-                }}
-            />
+            <div>
+                <AjaxPage 
+                    themes={this.props.themes}
+                    themePath={this.state.themePath}
+                    baseUrl={this.props.baseUrl}
+                    callback={(json)=>{
+                        self.update(json);
+                        self.setState({
+                            themePath: json.themePath    
+                        });
+                    }}
+                />
+                <PopupDom
+                   popup={this.state.popup}
+                   callback={(popup)=>{
+                        self.setState({
+                            popup: popup 
+                        });
+                   }}
+                />
+            </div>
         );
     }
 }

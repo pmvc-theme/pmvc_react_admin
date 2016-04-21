@@ -23,11 +23,16 @@ export default class AdminForm extends Component
             );
        }
        return (
-            <AjaxForm path={this.props.path} callBack={this.props.callBack} error={this.props.error}>
+            <AjaxForm 
+                path={this.props.path}
+                callback={this.props.callback}
+                errorCallback={this.props.errorCallback}
+                error={this.props.error}
+                method={this.props.method}
+            >
                 {this.props.children}
                 {message}
             </AjaxForm>
        );  
     }
 }
-AdminForm.defaultProps = { buttonText: 'Submit' };
