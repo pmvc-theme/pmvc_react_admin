@@ -23,13 +23,7 @@ export default class AdminForm extends Component
             );
        }
        return (
-            <AjaxForm 
-                path={this.props.path}
-                callback={this.props.callback}
-                errorCallback={this.props.errorCallback}
-                error={this.props.error}
-                method={this.props.method}
-            >
+            <AjaxForm {...this.props}>
                 {this.props.children}
                 {message}
             </AjaxForm>

@@ -13,6 +13,11 @@ export { default as  FormPreview } from './organisms/form_preview';
 export { default as  FormList } from './organisms/form_list';
 export { default as  PopupCDN } from './organisms/popup_cdn';
 
+// Ajax
+export {
+    ajaxDispatch
+} from 'react-organism-ajax';
+
 export { 
     AlertsNotifier,
     popupDispatch 

@@ -14,6 +14,11 @@ class PMVCReactAdmin extends Component
         };
     }
 
+    componentWillReceiveProps(nextProps)
+    {
+        this.update(nextProps);
+    }
+
     update(params){
         dispatch({
             type: 'config/set',
