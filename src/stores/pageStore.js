@@ -18,12 +18,6 @@ class PageStore extends ReduceStore
   {
         switch (action.type)
         {
-            case 'page/go':
-               return state.set('path', action.params.path);
-            case 'page/changeUrl':
-               return state.set('path', action.params.path);
-            case 'ajax':
-               return state.set('url', action.params.url);
             case 'config/set':
                return state.merge(action.params);
             default:

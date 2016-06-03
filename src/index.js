@@ -57,6 +57,8 @@ export { default as  pageStore } from './stores/pageStore';
 
 // Dispatch
 export { dispatch } from './actions/dispatcher';
+export { default as Immutable } from 'immutable';
+export { ReduceStore } from 'flux/utils';
 
 // Default
 export {default} from './organisms/pmvc_react_admin';

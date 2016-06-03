@@ -16,14 +16,25 @@ export default class AdminForm extends Component
                 <Message 
                     header={this.props.messageHeader}
                     className={this.props.messageClassName}
-                    error={this.props.error}
+                    type={this.props.error}
                 >
                     {this.props.message}
                 </Message>
             );
        }
+       // Do not {...this.props} will assign unnecessary attribute to form
        return (
-            <AjaxForm {...this.props}>
+            <AjaxForm 
+                path={this.props.path}
+                callback={this.props.callback}
+                errorCallback={this.props.errorCallback}
+                error={this.props.error}
+                method={this.props.method} 
+                ui={this.props.ui}
+                className={this.props.className}
+                onSubmit={this.props.onSubmit}
+                method={this.props.method}
+            >
                 {this.props.children}
                 {message}
             </AjaxForm>
