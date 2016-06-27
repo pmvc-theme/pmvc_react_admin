@@ -13,7 +13,9 @@ import {
     FormattedJson
 } from 'react-atomic-organism';
 import {
-    List
+    TableList,
+    Cell,
+    Column
 } from 'pmvc_react_list';
 import AdminForm from "./form";
 export default class FormPreview extends Component
@@ -37,45 +39,60 @@ export default class FormPreview extends Component
        let props = this.props;
        let list = null;
        if (this.state.preview) {
-           preview = (<FormattedJson atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJson>);
+           preview = (
+            <FormattedJson atom="div" indent={2} label={this.props.label}>
+                {this.state.preview}
+            </FormattedJson>
+           );
        } 
        if (this.state.list) {
             list = (
-            <List 
+            <TableList 
              rows={this.state.list} 
+             rowsLocator={this.props.rowsLocator}
              tableWidth = {this.state.width}
-             colsLocator={props.colsLocator}
-             rowsLocator={props.rowsLocator}
+            >
+            <Column
+                header={<Cell>Col1</Cell>}
+                cell={({rowIndex,columnIndex})=>{
+                    let rows = this.props.rowsLocator(this.state.list);
+                    return rows[rowIndex]; 
+                }}
             />
+            </TableList>
            );
        }
        return (
-            <AdminForm ref={dom=>this.form=dom} callback={(json)=>{
-                if (json) {
-                    switch(this.state.selected){
-                        case "source":
-                        this.setState({preview:json});
-                        break;
-                        case "list":
-                        this.setState({list:json});
-                        break;
+            <div>
+                <AdminForm ref={dom=>this.form=dom} callback={(json)=>{
+                    if (json) {
+                        switch(this.state.selected){
+                            case "source":
+                            this.setState({preview:json});
+                            break;
+                            case "list":
+                            this.setState({list:json});
+                            break;
+                        }
                     }
-                }
-                if (json.errors) {
-                    this.setState({
-                        message: json.errors[0].message,
-                        error: 'error' 
-                    });
-                } else {
-                    this.reset();
-                }
-            }.bind(this)} {...this.props} children={null}>
-                {this.props.children}
-                <TabView  onTabItemPress={(name)=>{
-                    let f =ReactDOM.findDOMNode(this.form);
-                    let width = f.getBoundingClientRect().width - 30;
-                    this.setState({selected:name, width:width});
-                    f.dispatchEvent(new Event("submit"));
+                    if (json.errors) {
+                        this.setState({
+                            message: json.errors[0].message,
+                            error: 'error' 
+                        });
+                    } else {
+                        this.reset();
+                    }
+                }.bind(this)} {...this.props} children={null}>
+                    {this.props.children}
+                </AdminForm>
+                <TabView
+                    selected={this.state.selected}
+                    onTabItemPress={(name)=>{
+                        let f =ReactDOM.findDOMNode(this.form);
+                        let width = f.getBoundingClientRect().width - 30;
+                        this.setState({selected:name, width:width});
+                        f.dispatchEvent(new Event("submit"));
                 }.bind(this)}>
                     <div name="list">
                         {list}
@@ -86,7 +103,7 @@ export default class FormPreview extends Component
                         <Item>Source</Item>
                     </div>
                 </TabView>
-            </AdminForm>
+            </div>
        );  
     }
 }
