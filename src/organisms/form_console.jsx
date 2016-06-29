@@ -25,7 +25,7 @@ export default class FormPreview extends Component
       super(props);
       this.state = { 
          preview: '', 
-         selected: '',
+         selected: 'list',
          width: ''
       };  
    }
@@ -33,6 +33,7 @@ export default class FormPreview extends Component
     reset()
     {
     }
+
 
     render(){
        let preview = null;
@@ -50,7 +51,9 @@ export default class FormPreview extends Component
             <TableList 
              rows={this.state.list} 
              rowsLocator={this.props.rowsLocator}
-             tableWidth = {this.state.width}
+             tableWidth ={this.state.width}
+             getColWidth={this.props.getColWidth}
+             getColStyle={this.props.getColStyle}
             >
             <Column
                 header={<Cell>Col1</Cell>}
@@ -64,26 +67,30 @@ export default class FormPreview extends Component
        }
        return (
             <div>
-                <AdminForm ref={dom=>this.form=dom} callback={(json)=>{
-                    if (json) {
-                        switch(this.state.selected){
-                            case "source":
-                            this.setState({preview:json});
-                            break;
-                            case "list":
-                            this.setState({list:json});
-                            break;
+                <AdminForm 
+                    ref={dom=>this.form=dom}
+                    callback={(json)=>{
+                        if (json) {
+                            switch(this.state.selected){
+                                case "source":
+                                this.setState({preview:json});
+                                break;
+                                case "list":
+                                this.setState({list:json});
+                                break;
+                            }
                         }
-                    }
-                    if (json.errors) {
-                        this.setState({
-                            message: json.errors[0].message,
-                            error: 'error' 
-                        });
-                    } else {
-                        this.reset();
-                    }
-                }.bind(this)} {...this.props} children={null}>
+                        if (json.errors) {
+                            this.setState({
+                                message: json.errors[0].message,
+                                error: 'error' 
+                            });
+                        } else {
+                            this.reset();
+                        }
+                    }.bind(this)}
+                    {...this.props} 
+                >
                     {this.props.children}
                 </AdminForm>
                 <TabView

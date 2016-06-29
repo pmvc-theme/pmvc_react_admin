@@ -1,4 +1,5 @@
 import React, {Component} from 'react'; 
+import ReactDOM from 'react-dom';
 import { 
     reactStyle, 
     Message, 
@@ -9,7 +10,17 @@ import {AjaxForm} from 'react-organism-ajax';
 
 export default class AdminForm extends Component
 {
-    render(){
+    handleKeyUp(e)
+    {
+        const f =ReactDOM.findDOMNode(this.form);
+        if(13===e.keyCode){
+            console.log('submit');
+            f.dispatchEvent(new Event("submit"));
+        }
+    }
+
+    render()
+    {
        let message = null;
        if (this.props.message) {
             message =( 
@@ -34,6 +45,8 @@ export default class AdminForm extends Component
                 className={this.props.className}
                 onSubmit={this.props.onSubmit}
                 method={this.props.method}
+                onKeyUp={this.handleKeyUp.bind(this)}
+                ref={dom=>this.form=dom}
             >
                 {this.props.children}
                 {message}
