@@ -35,7 +35,11 @@ export {
 } from 'react-atomic-molecule';
 
 export {
+    CardView,
+    Tab,
+    TabView,
     CDN,
+    FormattedJson,
     MaterialInput
 } from 'react-atomic-organism';
 

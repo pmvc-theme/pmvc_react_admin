@@ -11,9 +11,9 @@ export default class OneLineForm extends Component
     render(){
        return (
             <AdminForm {...this.props}>
-                <Field className="inline">
+                <Field fieldClassName="inline" label={this.props.label}>
                     {this.props.children}
-                    <Button type="submit" {...this.props}>{this.props.buttonText}</Button>
+                    <Button type="submit">{this.props.buttonText}</Button>
                 </Field>
             </AdminForm>
        );  

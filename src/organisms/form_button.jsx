@@ -9,18 +9,19 @@ import AdminForm from "./form";
 export default class FormButton extends Component
 {
     render(){
-       let top;
-       let bottom;
-       if (this.props.top) {
-           top=this.props.children;
+       let topDom;
+       let bottomDom;
+       const {top, path, buttonText, ...props} = this.props;
+       if (top) {
+           topDom=this.props.children;
        } else {
-           bottom=this.props.children;
+           bottomDom=this.props.children;
        }
        return (
             <AdminForm {...this.props}>
-                {top}
-                <Button type="submit" {...this.props}>{this.props.buttonText}</Button>
-                {bottom}
+                {topDom}
+                <Button type="submit" {...props}>{buttonText}</Button>
+                {bottomDom}
             </AdminForm>
        );  
     }

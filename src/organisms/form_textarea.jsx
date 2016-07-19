@@ -9,11 +9,18 @@ import AdminForm from "./form";
 export default class FormTextarea extends Component
 {
     render(){
+       let {label, name, value, onChange, defaultValue, buttonText, ...reset} = this.props;
        return (
-            <AdminForm {...this.props}>
+            <AdminForm {...reset}>
                 {this.props.children}
-                <Field atom="textarea" {...this.props} children={null}/>
-                <Button type="submit">{this.props.buttonText}</Button>
+                <Field atom="textarea" 
+                    label={label}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    defaultValue={defaultValue || null}
+                />
+                <Button type="submit">{buttonText}</Button>
             </AdminForm>
        );  
     }
