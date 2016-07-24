@@ -1,6 +1,6 @@
 {
   "name": "pmvc_react_admin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "pmvc admin theme",
   "main": "./src/index.js",
   "repository": "pmvc-theme/pmvc_react_admin",
