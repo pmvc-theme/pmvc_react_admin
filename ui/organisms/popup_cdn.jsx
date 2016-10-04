@@ -1,5 +1,5 @@
 import React, {Component} from 'react'; 
-import { PopupHandler, PopupOverlay } from 'react-organism-popup'; 
+import { PopupHover, PopupOverlay } from 'organism-react-popup'; 
 import { 
     CDN
 } from 'react-atomic-organism'; 
@@ -8,7 +8,7 @@ export default class PopupCDN extends Component
 {
     render(){
        return (
-            <PopupHandler
+            <PopupHover
                 popup={
                     <PopupOverlay className="very wide">
                         <CDN {...this.props} 
@@ -20,7 +20,7 @@ export default class PopupCDN extends Component
                 } 
             >
                 <CDN {...this.props}/>
-            </PopupHandler>
+            </PopupHover>
        );  
     }
 }

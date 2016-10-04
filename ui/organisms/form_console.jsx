@@ -69,7 +69,7 @@ export default class FormPreview extends Component
             <div>
                 <AdminForm 
                     ref={dom=>this.form=dom}
-                    callback={(json)=>{
+                    callback={((json)=>{
                         if (json) {
                             switch(this.state.selected){
                                 case "source":
@@ -88,19 +88,19 @@ export default class FormPreview extends Component
                         } else {
                             this.reset();
                         }
-                    }.bind(this)}
+                    }).bind(this)}
                     {...this.props} 
                 >
                     {this.props.children}
                 </AdminForm>
                 <TabView
                     selected={this.state.selected}
-                    onTabItemPress={(name)=>{
+                    onTabItemPress={((name)=>{
                         let f =ReactDOM.findDOMNode(this.form);
                         let width = f.getBoundingClientRect().width - 30;
                         this.setState({selected:name, width:width});
                         f.dispatchEvent(new Event("submit"));
-                }.bind(this)}>
+                }).bind(this)}>
                     <div name="list">
                         {list}
                         <Item>List</Item>

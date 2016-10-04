@@ -1,27 +1,18 @@
 // Templates
-export { default as  TwoColumns } from './templates/two_columns';
+export { default as  TwoColumns } from '../ui/templates/two_columns';
+export DocTemplate from '../ui/templates/DocTemplate';
 
 // Organisms
-export { default as  VerticalMenu } from './organisms/vertical_menu';
-export { default as  Link } from './organisms/link';
-export { default as  AdminForm } from './organisms/form';
-export { default as  OneLineForm } from './organisms/one_line_form';
-export { default as  FormConsole } from './organisms/form_console';
-export { default as  FormTextarea } from './organisms/form_textarea';
-export { default as  FormButton } from './organisms/form_button';
-export { default as  FormPreview } from './organisms/form_preview';
-export { default as  FormList } from './organisms/form_list';
-export { default as  PopupCDN } from './organisms/popup_cdn';
-
-// Ajax
-export {
-    ajaxDispatch
-} from 'react-organism-ajax';
-
-export { 
-    AlertsNotifier,
-    popupDispatch 
-} from 'react-organism-popup';
+export { default as  VerticalMenu } from '../ui/organisms/vertical_menu';
+export { default as  Link } from '../ui/organisms/link';
+export { default as  AdminForm } from '../ui/organisms/form';
+export { default as  OneLineForm } from '../ui/organisms/one_line_form';
+export { default as  FormConsole } from '../ui/organisms/form_console';
+export { default as  FormTextarea } from '../ui/organisms/form_textarea';
+export { default as  FormButton } from '../ui/organisms/form_button';
+export { default as  FormPreview } from '../ui/organisms/form_preview';
+export { default as  FormList } from '../ui/organisms/form_list';
+export { default as  PopupCDN } from '../ui/organisms/popup_cdn';
 
 export {
     Card,
@@ -43,26 +34,5 @@ export {
     MaterialInput
 } from 'react-atomic-organism';
 
-export {
-    OrgChart,
-    OrgChartGroup,
-    OrgChartItem
-} from 'react-organism-orgchart';
-
-export { Container } from 'flux/utils';
-
-export { default as React, Component} from 'react';
-
-export {Table, Column, Cell} from 'pmvc_react_list';
 
 
-// Stores
-export { default as  pageStore } from './stores/pageStore';
-
-// Dispatch
-export { dispatch } from './actions/dispatcher';
-export { default as Immutable } from 'immutable';
-export { ReduceStore } from 'flux/utils';
-
-// Default
-export {default} from './organisms/pmvc_react_admin';

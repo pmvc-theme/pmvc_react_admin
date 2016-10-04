@@ -5,9 +5,11 @@ import {
     Message, 
     Button
 } from 'react-atomic-molecule'; 
-import {FormattedJson} from 'react-atomic-organism';
+import {
+    List
+} from 'pmvc_react_list';
 import AdminForm from "./form";
-export default class FormPreview extends Component
+export default class FormList extends Component
 {
    constructor(props)
    {   
@@ -23,11 +25,18 @@ export default class FormPreview extends Component
 
     render(){
        let preview = null;
+       let props = this.props;
        if (this.state.preview) {
-           preview = (<FormattedJson atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJson>);
-       }               
+           preview = (
+            <List 
+             rows={this.state.preview} 
+             colsLocator={props.colsLocator}
+             rowsLocator={props.rowsLocator}
+            />
+           );
+       } 
        return (
-            <AdminForm callback={(json)=>{
+            <AdminForm callback={((json)=>{
                 if (json) {
                     this.setState({preview:json});
                 }
@@ -39,11 +48,11 @@ export default class FormPreview extends Component
                 } else {
                     this.reset();
                 }
-            }.bind(this)} {...this.props} children={null}>
-                <Button type="submit" {...this.props}>{this.props.buttonText}</Button>
+            }).bind(this)} {...props} children={null}>
+                <Button type="submit" {...props}>{props.buttonText}</Button>
                 {preview}
             </AdminForm>
        );  
     }
 }
-FormPreview.defaultProps = { label: 'Preview' };
+FormList.defaultProps = { label: 'Preview' };

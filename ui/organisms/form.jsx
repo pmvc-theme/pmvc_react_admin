@@ -6,7 +6,7 @@ import {
     mixClass,
     Button
 } from 'react-atomic-molecule'; 
-import {AjaxForm} from 'react-organism-ajax';
+import {ReForm} from 'reshow';
 
 export default class AdminForm extends Component
 {
@@ -35,7 +35,7 @@ export default class AdminForm extends Component
        }
        // Do not {...this.props} will assign unnecessary attribute to form
        return (
-            <AjaxForm 
+            <ReForm 
                 path={this.props.path}
                 callback={this.props.callback}
                 errorCallback={this.props.errorCallback}
@@ -50,7 +50,7 @@ export default class AdminForm extends Component
             >
                 {this.props.children}
                 {message}
-            </AjaxForm>
+            </ReForm>
        );  
     }
 }
