@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MaterialInput = exports.FormattedJson = exports.CDN = exports.TabView = exports.Tab = exports.CardView = exports.reactStyle = exports.Segment = exports.Menu = exports.Item = exports.Field = exports.List = exports.Button = exports.Card = exports.PopupCDN = exports.FormList = exports.FormPreview = exports.FormButton = exports.FormTextarea = exports.FormConsole = exports.OneLineForm = exports.AdminForm = exports.Link = exports.VerticalMenu = exports.DocTemplate = exports.TwoColumns = undefined;
+exports.MaterialInput = exports.FormattedJson = exports.CDN = exports.TabView = exports.Tab = exports.CardView = exports.reactStyle = exports.Segment = exports.Menu = exports.Item = exports.Field = exports.List = exports.Button = exports.Card = exports.DocMenu = exports.DocTemplate = exports.PopupCDN = exports.FormPreview = exports.FormButton = exports.FormTextarea = exports.OneLineForm = exports.AdminForm = exports.Link = exports.VerticalMenu = exports.TwoColumns = undefined;
 
 var _two_columns = require('../ui/templates/two_columns');
 
@@ -50,15 +50,6 @@ Object.defineProperty(exports, 'OneLineForm', {
     }
 });
 
-var _form_console = require('../ui/organisms/form_console');
-
-Object.defineProperty(exports, 'FormConsole', {
-    enumerable: true,
-    get: function get() {
-        return _interopRequireDefault(_form_console).default;
-    }
-});
-
 var _form_textarea = require('../ui/organisms/form_textarea');
 
 Object.defineProperty(exports, 'FormTextarea', {
@@ -83,15 +74,6 @@ Object.defineProperty(exports, 'FormPreview', {
     enumerable: true,
     get: function get() {
         return _interopRequireDefault(_form_preview).default;
-    }
-});
-
-var _form_list = require('../ui/organisms/form_list');
-
-Object.defineProperty(exports, 'FormList', {
-    enumerable: true,
-    get: function get() {
-        return _interopRequireDefault(_form_list).default;
     }
 });
 
@@ -198,8 +180,16 @@ var _DocTemplate2 = require('../ui/templates/DocTemplate');
 
 var _DocTemplate3 = _interopRequireDefault(_DocTemplate2);
 
+var _DocMenu2 = require('../ui/molecules/DocMenu');
+
+var _DocMenu3 = _interopRequireDefault(_DocMenu2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+//export { default as  FormList } from '../ui/organisms/form_list';
+//export { default as  FormConsole } from '../ui/organisms/form_console';
+
+//doc
+
 
 exports.DocTemplate = _DocTemplate3.default;
-
-// Organisms
+exports.DocMenu = _DocMenu3.default;

@@ -10,17 +10,29 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _menu_rail = require('../organisms/menu_rail');
-
-var _menu_rail2 = _interopRequireDefault(_menu_rail);
-
 var _reactAtomicMolecule = require('react-atomic-molecule');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DocTemplate = function DocTemplate(props) {
-    return _jsx(_reactAtomicMolecule.Segment, {}, void 0, _jsx(_menu_rail2.default, {}, void 0, props.menu), props.children);
+    return _jsx(_reactAtomicMolecule.Segment, {
+        style: Styles.container
+    }, void 0, _jsx(_reactAtomicMolecule.Rail, {
+        style: Styles.menu
+    }, void 0, props.menu), props.children);
 };
 
 exports.default = DocTemplate;
+
+
+var Styles = {
+    container: {
+        margin: '0 10px 0 160px'
+    },
+    menu: {
+        width: '160px',
+        paddingRight: 0,
+        marginRight: 0
+    }
+};
 module.exports = exports['default'];

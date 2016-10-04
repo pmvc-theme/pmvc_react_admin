@@ -17,8 +17,8 @@ var _reshow = require('reshow');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Link = function Link(props) {
-    var classes = (0, _reactAtomicMolecule.mixClass)(undefined.props.className, 'item');
-    return _react2.default.createElement(_reshow.ReLink, _extends({}, undefined.props, {
+    var classes = (0, _reactAtomicMolecule.mixClass)(props.className, 'item');
+    return _react2.default.createElement(_reshow.ReLink, _extends({}, props, {
         className: classes
     }));
 };

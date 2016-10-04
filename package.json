@@ -13,7 +13,7 @@
   "dependencies": {
       "react-atomic-molecule": "*",
       "react-atomic-organism": "*",
-      "pmvc_react_list": "^0.0.3",
+      "pmvc_react_list": "^0.0.5",
       "reshow": "*",
       "organism-react-popup": "*"
   },

@@ -16,10 +16,6 @@ var _header = require('../organisms/header');
 
 var _header2 = _interopRequireDefault(_header);
 
-var _menu_rail = require('../organisms/menu_rail');
-
-var _menu_rail2 = _interopRequireDefault(_menu_rail);
-
 var _reactAtomicMolecule = require('react-atomic-molecule');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -50,7 +46,7 @@ var TwoColumnLayout = function (_Component) {
                 className: this.props.contentClassName,
                 styles: [Styles.container, this.props.styles],
                 styleOrder: 2
-            }, void 0, _jsx(_menu_rail2.default, {}, void 0, this.props.menu), this.props.content));
+            }, void 0, _jsx(_reactAtomicMolecule.Rail, {}, void 0, this.props.menu), this.props.content));
         }
     }]);
 

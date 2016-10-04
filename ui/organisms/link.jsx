@@ -4,11 +4,11 @@ import {ReLink} from 'reshow';
 
 const Link = (props) => {
     let classes = mixClass (
-        this.props.className,
+        props.className,
         'item'
     );
     return (
-        <ReLink {...this.props} 
+        <ReLink {...props} 
             className={classes}
         />
     );  

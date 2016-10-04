@@ -1,7 +1,10 @@
 import React, {Component} from 'react'; 
 import Header from '../organisms/header'; 
-import MenuRail from '../organisms/menu_rail'; 
-import { reactStyle, Segment } from 'react-atomic-molecule'; 
+import {
+    reactStyle,
+    Segment,
+    Rail
+} from 'react-atomic-molecule'; 
 class TwoColumnLayout extends Component
 {
    render(){
@@ -17,7 +20,7 @@ class TwoColumnLayout extends Component
                     styles={[Styles.container,this.props.styles]}
                     styleOrder={2}
                 >
-                    <MenuRail>{this.props.menu}</MenuRail>
+                    <Rail>{this.props.menu}</Rail>
                     {this.props.content}
                 </Segment>
             </div>
