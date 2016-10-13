@@ -1,37 +1,33 @@
-import React, {Component} from 'react'; 
-import Header from '../organisms/header'; 
+import React from 'react'; 
 import {
     reactStyle,
     Segment,
     Rail
 } from 'react-atomic-molecule'; 
-class TwoColumnLayout extends Component
-{
-   render(){
-        return (
-            <div>
-                <Header 
-                    brand={this.props.brand}
-                    nav={this.props.nav}
-                />
-                <Segment
-                    style={this.props.style}
-                    className={this.props.contentClassName}
-                    styles={[Styles.container,this.props.styles]}
-                    styleOrder={2}
-                >
-                    <Rail>{this.props.menu}</Rail>
-                    {this.props.content}
-                </Segment>
-            </div>
-        );  
-    }
-}
+import Header from '../organisms/header'; 
+import Doc from '../templates/DocTemplate'; 
+const TwoColumnLayout = (props) =>( 
+    <div>
+        <Header 
+            brand={props.brand}
+            nav={props.nav}
+        />
+        <Doc
+            menu={props.menu}
+            className={props.contentClassName}
+        >
+            {props.content}
+        </Doc>
+    </div>
+);
+TwoColumnLayout.defaultProps = {
+    contentClassName: 'basic'
+};
 
 let Styles = {
-    container: reactStyle({
+    container: {
         margin: '0 10px 0 340px',
-    })
+    }
 };
 
 export default TwoColumnLayout;

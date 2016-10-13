@@ -69,7 +69,7 @@ var AdminForm = function (_Component) {
                     path: this.props.path,
                     callback: this.props.callback,
                     errorCallback: this.props.errorCallback,
-                    error: this.props.error,
+                    message: this.props.error,
                     method: this.props.method,
                     ui: this.props.ui,
                     className: this.props.className,

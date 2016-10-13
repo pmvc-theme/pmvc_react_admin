@@ -1,12 +1,15 @@
 import React from 'react'; 
-import { Segment, Rail } from 'react-atomic-molecule'; 
-const DocTemplate = (props) => 
-<Segment style={Styles.container}>
-    <Rail style={Styles.menu}>
-        {props.menu}
-    </Rail>
-    {props.children}
-</Segment>
+import { mixClass, Segment, Rail } from 'react-atomic-molecule'; 
+const DocTemplate = (props) => { 
+    return (
+        <Segment {...props} style={Styles.container}>
+            <Rail style={Styles.menu}>
+                {props.menu}
+            </Rail>
+            {props.children}
+        </Segment>
+    );
+}
 
 export default DocTemplate;
 

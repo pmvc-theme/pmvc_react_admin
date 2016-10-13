@@ -6,3 +6,4 @@ coverage*
 assets
 composer.lock
 build
+list.js

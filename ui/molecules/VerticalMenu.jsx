@@ -1,12 +1,14 @@
 import React, {Component} from 'react'; 
 import {  Menu, Segment } from 'react-atomic-molecule'; 
 
-const DocMenu = (props) =>
+const VerticalMen = (props) =>
 <Menu 
     className="inverted vertical" 
-    style={Styles.container}>
-        {props.children}
-</Menu>
+    style={Styles.container}
+    {...props}
+/>
+
+export default VerticalMen;
 
 const Styles = {
     container: {
@@ -14,4 +16,3 @@ const Styles = {
     }
 };
 
-export default DocMenu;
