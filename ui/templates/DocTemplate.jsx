@@ -1,12 +1,13 @@
 import React from 'react'; 
 import { mixClass, Segment, Rail } from 'react-atomic-molecule'; 
 const DocTemplate = (props) => { 
+    const {menu, children, ...others} = props;
     return (
-        <Segment {...props} style={Styles.container}>
+        <Segment {...others} style={Styles.container}>
             <Rail style={Styles.menu}>
-                {props.menu}
+                {menu}
             </Rail>
-            {props.children}
+            {children}
         </Segment>
     );
 }
@@ -16,6 +17,7 @@ export default DocTemplate;
 const Styles = {
     container: {
         margin: '0 10px 0 160px',
+        paddingTop: 1,
     },
     menu: {
         width: '160px',
