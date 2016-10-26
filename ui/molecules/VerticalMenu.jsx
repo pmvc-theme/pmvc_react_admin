@@ -13,6 +13,9 @@ export default VerticalMen;
 const Styles = {
     container: {
         width: '160px',
+        position: 'fixed',
+        height: '100%',
+        borderRadius: 0
     }
 };
 

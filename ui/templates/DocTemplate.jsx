@@ -12,6 +12,10 @@ const DocTemplate = (props) => {
     );
 }
 
+DocTemplate.defaultProps = {
+    className: 'basic'
+};
+
 export default DocTemplate;
 
 const Styles = {

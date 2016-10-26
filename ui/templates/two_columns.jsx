@@ -4,6 +4,10 @@ import {
     Segment,
     Rail
 } from 'react-atomic-molecule'; 
+import {
+    PopupElement
+} from 'organism-react-popup';
+
 import Header from '../organisms/header'; 
 import Doc from '../templates/DocTemplate'; 
 const TwoColumnLayout = (props) =>( 
@@ -18,16 +22,16 @@ const TwoColumnLayout = (props) =>(
         >
             {props.content}
         </Doc>
+        <PopupElement />
+        {props.children}
     </div>
 );
-TwoColumnLayout.defaultProps = {
-    contentClassName: 'basic'
-};
 
-let Styles = {
+export default TwoColumnLayout;
+
+const Styles = {
     container: {
         margin: '0 10px 0 340px',
     }
 };
 
-export default TwoColumnLayout;
