@@ -15,7 +15,8 @@ const Styles = {
         width: '160px',
         position: 'fixed',
         height: '100%',
-        borderRadius: 0
+        borderRadius: 0,
+        left: 0 
     }
 };
 
