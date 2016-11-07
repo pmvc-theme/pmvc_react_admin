@@ -17,6 +17,8 @@ export { default as  VerticalMenu } from '../ui/molecules/VerticalMenu';
 export DocTemplate from '../ui/templates/DocTemplate';
 
 export {
+    reactStyle,
+    mixClass,
     Card,
     Button,
     List,
@@ -24,7 +26,6 @@ export {
     Item,
     Menu,
     Segment,
-    reactStyle
 } from 'react-atomic-molecule';
 
 export {
