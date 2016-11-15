@@ -40,8 +40,9 @@ const InjectStyles = {
         {
             display: 'none !important'
         },
-        [min.md, '#doc-menu+.hamburger-icon']
+        [min.md, '.ui.rail>.hamburger-icon']
     ],
+    /* Active */
     containerActive: [
         {
             margin: '34px 10px 0 160px !important',
@@ -52,13 +53,13 @@ const InjectStyles = {
         {
             width: '160px !important'
         },
-        '.side-menu-active #doc-menu'
+        '.active > #doc-menu'
     ],
     iconActive: [
         {
             left: '160px !important'
         },
-        '.side-menu-active #doc-menu+.hamburger-icon'
+        '.active > #doc-menu+.hamburger-icon'
     ]
 };
 let injects = lazyInject (
