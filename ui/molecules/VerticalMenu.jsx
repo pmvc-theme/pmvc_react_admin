@@ -18,10 +18,11 @@ const Styles = {
     container: {
         width: 0,
         position: 'fixed',
-        height: '100%',
         borderRadius: 0,
         left: 0, 
-        top: 0
+        top: 0,
+        bottom:0,
+        margin: 0
     }
 };
 

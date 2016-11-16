@@ -46,12 +46,13 @@ const InjectStyles = {
     containerActive: [
         {
             margin: '34px 10px 0 160px !important',
+            overflow: 'hidden'
         },
         '.side-menu-active #doc'
     ],
     menuActive: [
         {
-            width: '160px !important'
+            width: '160px !important',
         },
         '.active > #doc-menu'
     ],
