@@ -19,14 +19,14 @@ export default DocTemplate;
 const Styles = {
     container: {
         margin: '34px 0 0',
-        padding: 0 
+        padding: 10 
     }
 };
 
 const InjectStyles = {
     container: [
         {
-            margin: '0 10px 0 160px !important',
+            margin: '0 0 0 160px !important',
         },
         [min.md, '#doc']
     ],
