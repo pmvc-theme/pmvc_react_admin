@@ -10,22 +10,25 @@ import {
 
 import Header from '../organisms/header'; 
 import Doc from '../templates/DocTemplate'; 
-const TwoColumnLayout = (props) =>( 
-    <div>
-        <Header 
-            brand={props.brand}
-            nav={props.nav}
-        />
-        <Doc
-            menu={props.menu}
-            className={props.contentClassName}
-        >
-            {props.content}
-        </Doc>
-        <PopupElement />
-        {props.children}
-    </div>
-);
+const TwoColumnLayout = (props) =>
+{
+    return ( 
+        <div>
+            <Header 
+                brand={props.brand}
+                nav={props.nav}
+            />
+            <Doc
+                menu={props.menu}
+                className={props.contentClassName}
+            >
+                {props.content}
+            </Doc>
+            <PopupElement />
+            {props.children}
+        </div>
+    );
+}
 
 export default TwoColumnLayout;
 

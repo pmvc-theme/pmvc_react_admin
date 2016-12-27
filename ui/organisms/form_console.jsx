@@ -9,9 +9,11 @@ import {
     
 } from 'react-atomic-molecule'; 
 import {
-    TabView,
     FormattedJson
 } from 'react-atomic-organism';
+import {
+    TabView
+} from 'organism-react-navigation';
 import {
     TableList,
     Cell,

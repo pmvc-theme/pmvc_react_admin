@@ -1,6 +1,6 @@
 {
   "name": "pmvc_react_admin",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "pmvc admin theme",
   "main": "./build/src/index.js",
   "repository": "pmvc-theme/pmvc_react_admin",
@@ -11,10 +11,11 @@
   "author": "Hill <hill@kimo.com>",
   "license": "MIT",
   "dependencies": {
+    "organism-react-navigation": "*",
     "organism-react-popup": "*",
-    "react-atomic-molecule": ">=0.0.41",
+    "react-atomic-molecule": "*",
     "react-atomic-organism": "*",
-    "reshow": ">=0.0.24"
+    "reshow": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
