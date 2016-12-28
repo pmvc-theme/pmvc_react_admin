@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import { 
     reactStyle, 
     Field, 
-    Message, 
     Button
 } from 'react-atomic-molecule'; 
 import {
     List
 } from 'pmvc_react_list';
-import AdminForm from "./form";
+import AdminForm from "../molecules/form";
+
 export default class FormList extends Component
 {
    constructor(props)
@@ -19,9 +19,6 @@ export default class FormList extends Component
       };  
    }
 
-    reset()
-    {
-    }
 
     render(){
        let preview = null;
@@ -36,19 +33,22 @@ export default class FormList extends Component
            );
        } 
        return (
-            <AdminForm callback={((json)=>{
-                if (json) {
-                    this.setState({preview:json});
-                }
-                if (json.errors) {
+            <AdminForm 
+                callback={((json)=>{
+                    if (json) {
+                        this.setState({preview:json});
+                    }
+                }).bind(this)}
+                errorCallback={((json)=>{
                     this.setState({
                         message: json.errors[0].message,
-                        error: 'error' 
+                        messageType: 'error' 
                     });
-                } else {
-                    this.reset();
-                }
-            }).bind(this)} {...props} children={null}>
+                }).bind(this)}
+                message={this.state.message}
+                messageType={this.state.messageType}
+                {...props}
+            >
                 <Button type="submit" {...props}>{props.buttonText}</Button>
                 {preview}
             </AdminForm>

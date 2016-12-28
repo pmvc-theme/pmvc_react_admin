@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import { 
     reactStyle, 
     Field, 
-    Message, 
     Button
 } from 'react-atomic-molecule'; 
-import AdminForm from "./form";
+import AdminForm from "../molecules/form";
 export default class FormTextarea extends Component
 {
     render(){

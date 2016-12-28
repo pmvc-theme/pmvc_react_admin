@@ -1543,7 +1543,7 @@ is-number@^2.0.2, is-number@^2.1.0:
 
 is-posix-bracket@^0.1.0:
   version "0.1.1"
-  resolved "http://registry.npmjs.org/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
+  resolved "https://registry.yarnpkg.com/is-posix-bracket/-/is-posix-bracket-0.1.1.tgz#3334dc79774368e92f016e6fbc0a88f5cd6e6bc4"
 
 is-primitive@^2.0.0:
   version "2.0.0"
@@ -1851,8 +1851,8 @@ optimist@~0.6.0:
     wordwrap "~0.0.2"
 
 organism-react-ajax@*:
-  version "0.0.46"
-  resolved "https://registry.yarnpkg.com/organism-react-ajax/-/organism-react-ajax-0.0.46.tgz#44cfb2bdc7081826cf7c173a5a7643ca6901da91"
+  version "0.0.48"
+  resolved "https://registry.yarnpkg.com/organism-react-ajax/-/organism-react-ajax-0.0.48.tgz#6f639096b30110acf522fc8adac559f2ae4241a4"
   dependencies:
     get-object-value "*"
     react-atomic-molecule "*"
@@ -1958,9 +1958,10 @@ pkg-dir@^1.0.0:
     find-up "^1.0.0"
 
 pmvc_react_list@*:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/pmvc_react_list/-/pmvc_react_list-0.0.12.tgz#a7063ffe087d13317378be6b641c06662b3ad2b0"
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/pmvc_react_list/-/pmvc_react_list-0.0.13.tgz#975ca510d1ba507f97210cf4a7265edc8cf25ec0"
   dependencies:
+    get-object-value "*"
     react-atomic-molecule "*"
 
 preserve@^0.2.0:
@@ -2038,8 +2039,8 @@ react-atomic-atom@*:
   resolved "https://registry.yarnpkg.com/react-atomic-atom/-/react-atomic-atom-1.0.2.tgz#b13322adf38cad56013e79748755c24c020090b4"
 
 react-atomic-molecule@*, react-atomic-molecule@>=0.0.40:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/react-atomic-molecule/-/react-atomic-molecule-1.1.10.tgz#a4aa121ddd35a4d7d5cd4c5575df5615036d8cad"
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/react-atomic-molecule/-/react-atomic-molecule-1.1.12.tgz#2f5f409e159568cc7bedc47bf41d9e3ebda80c2f"
   dependencies:
     class-lib "*"
     exenv "1.2.1"

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { 
     reactStyle, 
     Field, 
-    Message, 
     Button,
     Item,
     
@@ -15,11 +14,11 @@ import {
     TabView
 } from 'organism-react-navigation';
 import {
-    TableList,
+    Table,
     Cell,
     Column
 } from 'pmvc_react_list';
-import AdminForm from "./form";
+import AdminForm from "../molecules/form";
 export default class FormPreview extends Component
 {
    constructor(props)
@@ -31,10 +30,6 @@ export default class FormPreview extends Component
          width: ''
       };  
    }
-
-    reset()
-    {
-    }
 
 
     render(){
@@ -50,7 +45,7 @@ export default class FormPreview extends Component
        } 
        if (this.state.list) {
             list = (
-            <TableList 
+            <Table 
              rows={this.state.list} 
              rowsLocator={this.props.rowsLocator}
              tableWidth ={this.state.width}
@@ -64,7 +59,7 @@ export default class FormPreview extends Component
                     return rows[rowIndex]; 
                 }}
             />
-            </TableList>
+            </Table>
            );
        }
        return (
@@ -82,19 +77,17 @@ export default class FormPreview extends Component
                                 break;
                             }
                         }
-                        if (json.errors) {
-                            this.setState({
-                                message: json.errors[0].message,
-                                error: 'error' 
-                            });
-                        } else {
-                            this.reset();
-                        }
                     }).bind(this)}
-                    {...this.props} 
-                >
-                    {this.props.children}
-                </AdminForm>
+                    errorCallback={((json)=>{
+                        this.setState({
+                            message: json.errors[0].message,
+                            messageType: 'error' 
+                        });
+                    }).bind(this)}
+                    message={this.state.message}
+                    messageType={this.state.messageType}
+                    {...props} 
+                />
                 <TabView
                     selected={this.state.selected}
                     onTabItemPress={((name)=>{
