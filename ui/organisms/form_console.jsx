@@ -78,14 +78,7 @@ export default class FormPreview extends Component
                             }
                         }
                     }).bind(this)}
-                    errorCallback={((json)=>{
-                        this.setState({
-                            message: json.errors[0].message,
-                            messageType: 'error' 
-                        });
-                    }).bind(this)}
-                    message={this.state.message}
-                    messageType={this.state.messageType}
+                    style={{marginBottom:30}}
                     {...props} 
                 />
                 <TabView

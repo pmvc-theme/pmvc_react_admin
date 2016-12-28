@@ -9,6 +9,23 @@ import {ReForm} from 'reshow';
 
 export default class AdminForm extends Component
 {
+    constructor(props) 
+    {
+        super(props);
+        this.state = {
+            message: props.message,
+            messageType: props.messageType
+        };
+    } 
+
+    componentWillReceiveProps(props)
+    {
+        this.setState({
+            message: props.message,
+            messageType: props.messageType
+        });
+    }
+
     handleKeyUp = (e)=>
     {
         const f = this.form;
@@ -18,38 +35,60 @@ export default class AdminForm extends Component
         }
     }
 
+    handleSubmit = (e)=>
+    {
+        this.reset();
+        const {onSubmit} = this.props; 
+        if (onSubmit) {
+            onSubmit(e);
+        }
+    }
+
+    errorCallback= (json)=>{
+        this.setState({
+            message: json.errors[0].message,
+            messageType: 'error' 
+        });
+    }
+
+   reset()
+   {
+       this.setState({message:null,messageType:null});
+   }
+
     render()
     {
        const props = this.props;
-       let message = null;
-       if (props.message) {
-            message =( 
+       const {message, messageType} = this.state;
+       let thisMessage = null;
+       if (message) {
+            thisMessage =( 
                 <Message 
                     header={props.messageHeader}
                     className={props.messageClassName}
-                    messageType={props.messageType}
+                    messageType={messageType}
                 >
-                    {props.message}
+                    {message}
                 </Message>
             );
        }
        // Do not {...this.props} will assign unnecessary attribute to form
        return (
             <ReForm 
-                path={props.path}
                 callback={props.callback}
-                errorCallback={props.errorCallback}
-                messageType={props.messageType}
-                method={props.method} 
-                ui={props.ui}
                 className={props.className}
-                onSubmit={props.onSubmit}
+                errorCallback={this.errorCallback}
+                messageType={messageType}
                 method={props.method}
+                onSubmit={this.handleSubmit}
                 onKeyUp={this.handleKeyUp}
+                path={props.path}
                 refCb={dom=>this.form=dom}
+                style={props.style}
+                ui={props.ui}
             >
                 {props.children}
-                {message}
+                {thisMessage}
             </ReForm>
        );  
     }
