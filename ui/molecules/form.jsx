@@ -5,7 +5,7 @@ import {
     mixClass,
     Button
 } from 'react-atomic-molecule'; 
-import {ReForm} from 'reshow';
+import {AjaxForm, ajaxStore} from 'organism-react-ajax';
 
 export default class AdminForm extends Component
 {
@@ -44,6 +44,16 @@ export default class AdminForm extends Component
         }
     }
 
+    callback = (json) =>
+    {
+        this.setState({
+            message: 'Success',
+            messageType: 'success' 
+        });
+        let callback = ajaxStore.getState().get('callback');
+        callback.call(null,json);
+    }
+
     errorCallback= (json)=>{
         this.setState({
             message: json.errors[0].message,
@@ -72,10 +82,10 @@ export default class AdminForm extends Component
                 </Message>
             );
        }
-       // Do not {...this.props} will assign unnecessary attribute to form
+       // Do not use {...this.props} will assign unnecessary attribute to form
        return (
-            <ReForm 
-                callback={props.callback}
+            <AjaxForm 
+                callback={props.callback || this.callback}
                 className={props.className}
                 errorCallback={this.errorCallback}
                 messageType={messageType}
@@ -89,7 +99,7 @@ export default class AdminForm extends Component
             >
                 {props.children}
                 {thisMessage}
-            </ReForm>
+            </AjaxForm>
        );  
     }
 }
