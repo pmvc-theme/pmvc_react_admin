@@ -6,6 +6,7 @@ import {
     Button
 } from 'react-atomic-molecule'; 
 import {AjaxForm, ajaxStore} from 'organism-react-ajax';
+import get from 'get-object-value';
 
 export default class AdminForm extends Component
 {
@@ -46,17 +47,17 @@ export default class AdminForm extends Component
 
     callback = (json) =>
     {
+        let callback = ajaxStore.getState().get('callback');
+        callback(json);
         this.setState({
-            message: 'Success',
+            message: this.props.message || 'Success',
             messageType: 'success' 
         });
-        let callback = ajaxStore.getState().get('callback');
-        callback.call(null,json);
     }
 
     errorCallback= (json)=>{
         this.setState({
-            message: json.errors[0].message,
+            message: get(json, ['data', 'errors', 0, 'message']),
             messageType: 'error' 
         });
     }
