@@ -5,10 +5,16 @@ import {
     Button
 } from 'react-atomic-molecule'; 
 import {FormattedJson} from 'react-atomic-organism';
-import AdminForm from "../molecules/form";
 
-export default class FormPreview extends Component
+import FormButton from "../organisms/form_button";
+
+class FormPreview extends Component
 {
+
+   static defaultProps = {
+        label: 'Preview'
+   };
+
    constructor(props)
    {   
       super(props);
@@ -22,28 +28,21 @@ export default class FormPreview extends Component
        if (this.state.preview) {
            preview = (<FormattedJson atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJson>);
        }               
-       const props = this.props;
+       const {children, ...others} = this.props;
+       const callback = (json) => {
+            if (json) {
+                this.setState({preview:json});
+            }
+       }
        return (
-            <AdminForm 
-                callback={((json)=>{
-                    if (json) {
-                        this.setState({preview:json});
-                    }
-                }).bind(this)}
-                errorCallback={((json)=>{
-                    this.setState({
-                        message: json.errors[0].message,
-                        messageType: 'error' 
-                    });
-                }).bind(this)}
-                message={this.state.message}
-                messageType={this.state.messageType}
-                {...props}
-            >
-                <Button type="submit" {...this.props}>{this.props.buttonText}</Button>
-                {preview}
-            </AdminForm>
+            <div>
+            <FormButton callback={callback} {...others}>
+                {children}
+            </FormButton>
+            {preview}
+            </div>
        );  
     }
 }
-FormPreview.defaultProps = { label: 'Preview' };
+
+export default FormPreview;

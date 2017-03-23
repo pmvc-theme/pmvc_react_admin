@@ -1,5 +1,7 @@
 // Templates
-export { default as  TwoColumns } from '../ui/templates/two_columns';
+export TwoColumns from '../ui/templates/TwoColumns';
+export OneColumn from '../ui/templates/OneColumn';
+export DocTemplate from '../ui/templates/DocTemplate';
 
 // Organisms
 export { default as  Link } from '../ui/organisms/link';
@@ -12,9 +14,6 @@ export { default as  PopupCDN } from '../ui/organisms/popup_cdn';
 //molecules
 export { default as  AdminForm } from '../ui/molecules/form';
 export { default as  VerticalMenu } from '../ui/molecules/VerticalMenu';
-
-//doc
-export DocTemplate from '../ui/templates/DocTemplate';
 
 export {
     reactStyle,
@@ -44,6 +43,7 @@ export {
     pageStore,
     default as Reshow,
     ReshowComponent,
+    ReshowRealTimeComponent,
     reshow
 } from 'reshow';
 

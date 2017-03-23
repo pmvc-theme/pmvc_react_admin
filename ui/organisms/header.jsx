@@ -19,6 +19,7 @@ let Styles = {
     container: reactStyle({
         minHeight: '53px',
         borderTop: '2px solid #2baab1',
+        marginBottom: 5
     })
 };
 

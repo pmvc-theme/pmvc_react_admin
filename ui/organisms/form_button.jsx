@@ -11,7 +11,7 @@ export default class FormButton extends Component
     render(){
        let topDom;
        let bottomDom;
-       const {bottom, path, buttonText, message, ...props} = this.props;
+       const {bottom, path, buttonText, message, callback, ...props} = this.props;
        if (bottom) {
            topDom=this.props.children;
        } else {
