@@ -2,10 +2,12 @@ import React from 'react';
 import { mixClass } from 'react-atomic-molecule';
 import {ReLink} from 'reshow';
 
-const Link = (props) => {
+const Link = ({item, ...props}) => {
     let classes = mixClass (
         props.className,
-        'item'
+        {
+            item: item
+        }
     );
     return (
         <ReLink {...props} 
@@ -13,5 +15,9 @@ const Link = (props) => {
         />
     );  
 }
+
+Link.defaultProps = {
+    item: true
+};
 
 export default Link;
