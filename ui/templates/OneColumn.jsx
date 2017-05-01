@@ -17,6 +17,7 @@ export default OneColumn;
 
 const Styles = {
     container: {
-        padding: '0 5px'
+        padding: '0 5px',
+        overflow: 'auto'
     }
 };
