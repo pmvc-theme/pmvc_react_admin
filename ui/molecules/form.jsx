@@ -51,7 +51,7 @@ export default class AdminForm extends Component
         callback(json);
         this.setState({
             message: this.props.message || 'Success',
-            messageType: 'success' 
+            messageType: this.props.messageType || 'success' 
         });
     }
 
