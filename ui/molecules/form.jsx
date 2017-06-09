@@ -36,15 +36,6 @@ export default class AdminForm extends Component
         }
     }
 
-    handleSubmit = (e)=>
-    {
-        this.reset();
-        const {onSubmit} = this.props; 
-        if (onSubmit) {
-            onSubmit(e);
-        }
-    }
-
     callback = (json) =>
     {
         let callback = ajaxStore.getState().get('callback');
@@ -91,7 +82,6 @@ export default class AdminForm extends Component
                 errorCallback={this.errorCallback}
                 messageType={messageType}
                 method={props.method}
-                onSubmit={this.handleSubmit}
                 onKeyUp={this.handleKeyUp}
                 path={props.path}
                 refCb={dom=>this.form=dom}
