@@ -1,7 +1,9 @@
 import React, {Component} from 'react'; 
 import { mixClass, reactStyle, Menu, Segment } from 'react-atomic-molecule'; 
 
-const VerticalMen = (props) =>
+const VerticalMenu = (props) =>
+{
+return (
 <Menu 
     id="doc-menu"
     styles={reactStyle(
@@ -13,8 +15,10 @@ const VerticalMen = (props) =>
     {...props}
     className={mixClass("inverted vertical", props.className)} 
 />
+);
+};
 
-export default VerticalMen;
+export default VerticalMenu;
 
 const Styles = {
     container: {
