@@ -74,6 +74,7 @@ export default class AdminForm extends Component
                 </Message>
             );
        }
+
        // Do not use {...this.props} will assign unnecessary attribute to form
        return (
             <AjaxForm 
@@ -83,6 +84,7 @@ export default class AdminForm extends Component
                 messageType={messageType}
                 method={props.method}
                 onKeyUp={this.handleKeyUp}
+                beforeSubmit={props.beforeSubmit}
                 path={props.path}
                 refCb={dom=>this.form=dom}
                 style={props.style}
