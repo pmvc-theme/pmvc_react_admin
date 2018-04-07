@@ -1,7 +1,7 @@
 // Templates
 export TwoColumns from '../ui/templates/TwoColumns';
 export OneColumn from '../ui/templates/OneColumn';
-export DocTemplate from '../ui/templates/DocTemplate';
+export {default as DocTemplate, getDocTemplate} from '../ui/templates/DocTemplate';
 
 // Organisms
 export { default as  Link } from '../ui/organisms/link';
