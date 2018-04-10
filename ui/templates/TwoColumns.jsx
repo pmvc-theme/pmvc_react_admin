@@ -6,7 +6,10 @@ import {
 } from 'react-atomic-molecule'; 
 
 import Header from '../organisms/header'; 
-import Doc from '../templates/DocTemplate'; 
+import { getDocTemplate } from '../templates/DocTemplate'; 
+const Doc = getDocTemplate({}, true, {
+    sideWidth: 160
+});
 const TwoColumns = (props) =>
 {
     return ( 
@@ -18,10 +21,8 @@ const TwoColumns = (props) =>
             <Doc
                 menu={props.menu}
                 className={props.contentClassName}
-            >
-                {props.content}
-            </Doc>
-            {props.children}
+                body={<div style={Styles.body}>{props.content}</div>}
+            />
         </div>
     );
 }
@@ -29,8 +30,8 @@ const TwoColumns = (props) =>
 export default TwoColumns;
 
 const Styles = {
-    container: {
-        margin: '0 10px 0 340px',
+    body: {
+        padding: 10
     }
 };
 
