@@ -1,4 +1,4 @@
-import React, {Component} from 'react'; 
+import React, {PureComponent} from 'react'; 
 import { 
     reactStyle, 
     Message, 
@@ -8,25 +8,8 @@ import {
 import {AjaxForm, ajaxStore} from 'organism-react-ajax';
 import get from 'get-object-value';
 
-export default class AdminForm extends Component
+export default class AdminForm extends PureComponent
 {
-    constructor(props) 
-    {
-        super(props);
-        this.state = {
-            message: props.message,
-            messageType: props.messageType
-        };
-    } 
-
-    componentWillReceiveProps(props)
-    {
-        this.setState({
-            message: props.message,
-            messageType: props.messageType
-        });
-    }
-
     handleKeyUp = (e)=>
     {
         const f = this.form;
@@ -58,16 +41,33 @@ export default class AdminForm extends Component
        this.setState({message:null,messageType:null});
    }
 
+    constructor(props) 
+    {
+        super(props);
+        this.state = {
+            message: props.message,
+            messageType: props.messageType
+        };
+    } 
+
+    static getDerivedStateFromProps(nextProps, prevState)
+    {
+        const {message, messageType} = nextProps;
+        return {
+            message, messageType
+        };
+    }
+
     render()
     {
-       const props = this.props;
+       const {refCb, messageHeader, messageClassName, ...props} = this.props;
        const {message, messageType} = this.state;
        let thisMessage = null;
        if (message) {
             thisMessage =( 
                 <Message 
-                    header={props.messageHeader}
-                    className={props.messageClassName}
+                    header={messageHeader}
+                    className={messageClassName}
                     messageType={messageType}
                 >
                     {message}
@@ -86,7 +86,7 @@ export default class AdminForm extends Component
                 onKeyUp={this.handleKeyUp}
                 beforeSubmit={props.beforeSubmit}
                 path={props.path}
-                refCb={dom=>this.form=dom}
+                refCb={dom=>{this.form=dom;refCb(dom);}}
                 style={props.style}
                 ui={props.ui}
             >
