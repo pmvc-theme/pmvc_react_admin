@@ -10,6 +10,10 @@ import get from 'get-object-value';
 
 export default class AdminForm extends PureComponent
 {
+    static defaultProps = {
+        refCb: ()=>{}
+    };
+
     handleKeyUp = (e)=>
     {
         const f = this.form;
