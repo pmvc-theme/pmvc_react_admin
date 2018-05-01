@@ -116,10 +116,10 @@ const getDocTemplate = (Styles, merge, params) =>
     if (merge) {
         mergeStyleConfig(Styles, defaultStyles, InjectStyles);
     }
-    const DocTemplate = ({menu, body, footer, ...others}) => {
+    const DocTemplate = ({menu, body, footer, style, ...others}) => {
         injects = lazyInject( injects, InjectStyles );
         return (
-            <Segment {...others} id="doc" style={Styles.container}>
+            <Segment {...others} id="doc" style={{...Styles.container, ...style}}>
                 {menu}
                 <SemanticUI>
                     {body}
