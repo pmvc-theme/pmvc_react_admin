@@ -24,17 +24,6 @@ const getDocTemplate = (Styles, merge, params) =>
             },
             '.ui.rail.left'
         ],
-        menu: [
-            {
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                overflowY: 'auto',
-                maxHeight: '100vh',
-                width: 0
-            },
-            '#doc-menu'
-        ],
         /*RWD*/
         mdContainer: [
             {
