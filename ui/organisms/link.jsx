@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { mixClass } from 'react-atomic-molecule';
+import { mixClass, SemanticUI } from 'react-atomic-molecule';
 import {ReLink} from 'reshow';
 
 const Link = ({item, ...props}) => {
@@ -10,8 +10,10 @@ const Link = ({item, ...props}) => {
         }
     );
     return (
-        <ReLink {...props} 
+        <ReLink {...props}
+            component={SemanticUI}
             className={classes}
+            atom="a"
         />
     );  
 }
