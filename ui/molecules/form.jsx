@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'; 
 import { 
     reactStyle, 
+    Form,
     Message, 
     mixClass,
     Button
@@ -82,6 +83,7 @@ export default class AdminForm extends PureComponent
        // Do not use {...this.props} will assign unnecessary attribute to form
        return (
             <AjaxForm 
+                component={Form}
                 callback={props.callback || this.callback}
                 className={props.className}
                 errorCallback={this.errorCallback}
