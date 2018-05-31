@@ -10,6 +10,8 @@ const getDocTemplate = (Styles, merge, params) =>
     const sideWidth = get(params, ['sideWidth'], 300);
     const miniSidebar = get(params, ['miniSidebar']);
     const miniSidebarWidth = get(params, ['miniSidebarWidth'], 42);
+    const rightWidth = get(params, ['rightWidth'], 0);
+    const containerClass = `width-${sideWidth}-${miniSidebarWidth}-${rightWidth}`;
     let InjectStyles = {
         /*default*/
         defaultOnIcon: [
@@ -27,7 +29,7 @@ const getDocTemplate = (Styles, merge, params) =>
         /*RWD*/
         mdContainer: [
             {
-                margin: '0 0 0 '+sideWidth+'px !important',
+                margin: '0 '+ rightWidth+ 'px 0 '+sideWidth+'px !important',
             },
             [min.md, '#doc']
         ],
@@ -47,7 +49,7 @@ const getDocTemplate = (Styles, merge, params) =>
         /* Active */
         containerActive: [
             {
-                margin: '0 0 0 '+sideWidth+'px !important',
+                margin: '0 '+ rightWidth+ 'px 0 '+sideWidth+'px !important',
                 overflow: 'hidden'
             },
             '.side-menu-active #doc'
@@ -105,18 +107,21 @@ const getDocTemplate = (Styles, merge, params) =>
     if (merge) {
         mergeStyleConfig(Styles, defaultStyles, InjectStyles);
     }
-    const DocTemplate = ({menu, body, footer, style, ...others}) => {
+
+    const DocTemplate = ({className, menu, right, body, footer, style, ...others}) => 
+    {
         injects = lazyInject( injects, InjectStyles );
         return (
-            <Segment {...others} id="doc" style={{...Styles.container, ...style}}>
-                {menu}
-                <SemanticUI>
-                    {body}
-                    {footer}
-                </SemanticUI>
-            </Segment>
+        <Segment {...others} id="doc" className={mixClass(className, containerClass)} style={{...Styles.container, ...style}}>
+            <SemanticUI>
+                {body}
+                {footer}
+            </SemanticUI>
+            {menu}
+            {right}
+        </Segment>
         );
-    }
+    };
 
     DocTemplate.defaultProps = {
         className: 'basic'
