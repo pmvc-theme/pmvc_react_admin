@@ -7,7 +7,10 @@ let injects;
 
 const getDocTemplate = (Styles, merge, params) =>
 {
-    const sideWidth = get(params, ['sideWidth'], 300);
+    let sideWidth = get(params, ['sideWidth'], 300);
+    if (!isNaN(sideWidth)) {
+        sideWidth += 'px'
+    }
     const miniSidebar = get(params, ['miniSidebar']);
     const miniSidebarWidth = get(params, ['miniSidebarWidth'], 42);
     const rightWidth = get(params, ['rightWidth'], 0);
@@ -20,24 +23,32 @@ const getDocTemplate = (Styles, merge, params) =>
             },
             '.ui.rail>.hamburger-icon.default-on'
         ],
+        defaultOnIconSvg: [
+            {
+                display: 'block',
+            },
+            '.ui.rail>.hamburger-icon svg'
+        ],
         rail: [
             {
-                minHeight: '100vh'
+                minHeight: '100vh',
+                width: 0,
+                overflow: 'hidden'
             },
-            '.ui.rail.left'
+            '.ui.rail.left, #doc-menu'
         ],
         /*RWD*/
         mdContainer: [
             {
-                margin: '0 '+ rightWidth+ 'px 0 '+sideWidth+'px !important',
+                padding: '0 '+ rightWidth+ 'px 0 '+sideWidth+' !important',
             },
             [min.md, '#doc']
         ],
         mdMenu: [
             {
-                width: sideWidth+'px !important'
+                width: sideWidth+' !important'
             },
-            [min.md, '#doc-menu']
+            [min.md, '.ui.rail.left, #doc-menu']
         ],
         mdIconDefaultOff: [
             {
@@ -49,20 +60,20 @@ const getDocTemplate = (Styles, merge, params) =>
         /* Active */
         containerActive: [
             {
-                margin: '0 '+ rightWidth+ 'px 0 '+sideWidth+'px !important',
+                padding: '0 '+ rightWidth+ 'px 0 '+sideWidth+' !important',
                 overflow: 'hidden'
             },
             '.side-menu-active #doc'
         ],
         menuActive: [
             {
-                width: sideWidth+'px !important',
+                width: sideWidth+' !important',
             },
-            '.active > #doc-menu'
+            '.active.ui > #doc-menu, .active.ui.rail.left'
         ],
         iconActive: [
             {
-                left: (sideWidth+1) +'px !important'
+                left: sideWidth+' !important'
             },
             '.active > #doc-menu ~ .hamburger-icon'
         ]
@@ -73,7 +84,7 @@ const getDocTemplate = (Styles, merge, params) =>
             /* RWD Inactive */
             mdContainerInactive: [
                 {
-                    margin: '0 0 0 '+miniSidebarWidth+'px !important',
+                    padding: '0 0 0 '+miniSidebarWidth+'px !important',
                 },
                 [min.md, '.side-menu-inactive #doc']
             ],
@@ -97,7 +108,7 @@ const getDocTemplate = (Styles, merge, params) =>
             ],
             mdIconDefaultOn: [
                 {
-                    left: (sideWidth+1) +'px !important',
+                    left: sideWidth+ ' !important',
                     display: 'block !important'
                 },
                 [min.md, '.ui.rail>.hamburger-icon.default-on']
@@ -113,7 +124,7 @@ const getDocTemplate = (Styles, merge, params) =>
         injects = lazyInject( injects, InjectStyles );
         return (
         <Segment {...others} id="doc" className={mixClass(className, containerClass)} style={{...Styles.container, ...style}}>
-            <SemanticUI>
+            <SemanticUI className="doc-body" style={Styles.docBody}>
                 {body}
                 {footer}
             </SemanticUI>
@@ -135,8 +146,10 @@ const defaultStyles = {
         margin: 0,
         borderLeft: '1px solid #f5f5f5',
         padding: 0,
-        minWidth: 300
     },
+    docBody: {
+        minWidth: 350
+    }
 };
 
 export {getDocTemplate};
