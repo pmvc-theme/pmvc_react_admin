@@ -90,13 +90,14 @@ const getDocTemplate = (Styles, merge, params) =>
             ],
             mdRailInactive: [
                 {
-                    maxWidth: miniSidebarWidth
+                    maxWidth: miniSidebarWidth,
                 },
                 [min.md, '#doc > .ui.rail.inactive']
             ],
             mdMenuInactive: [
                 {
-                    maxWidth: miniSidebarWidth
+                    maxWidth: miniSidebarWidth,
+                    overflowY: 'visible !important'
                 },
                 [min.md, '#doc > .ui.rail.inactive #doc-menu']
             ],
