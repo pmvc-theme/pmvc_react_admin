@@ -40,6 +40,7 @@ export {
 } from 'organism-react-navigation';
 
 export {
+    dispatch,
     pageStore,
     default as Reshow,
     ReshowComponent,
