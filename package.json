@@ -1,6 +1,6 @@
 {
   "name": "pmvc_react_admin",
-  "version": "0.1.46",
+  "version": "0.1.47",
   "description": "pmvc admin theme",
   "main": "./build/src/index.js",
   "repository": "pmvc-theme/pmvc_react_admin",
@@ -15,8 +15,7 @@
     "organism-react-popup": "*",
     "pmvc_react_list": "*",
     "react-atomic-molecule": "*",
-    "react-atomic-organism": "*",
-    "reshow": "*"
+    "react-atomic-organism": "*"
   },
   "devDependencies": {
     "react": "^16.x",
