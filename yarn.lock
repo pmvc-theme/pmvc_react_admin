@@ -2898,16 +2898,6 @@ get-scroll-info@*:
     reshow-runtime "*"
     win-doc "*"
 
-get-storage@*:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/get-storage/-/get-storage-0.1.5.tgz#6a30c5453bf287d32cf98796f75f6391e3453160"
-  integrity sha512-fM1LOFvdxzYibpVQ6Hhd5SfYQ9ih5fjpbOnpOpwVm91xFJMHwHLZzowVUSKv2uzPbfhJhArYDDFHe/u4idwWFA==
-  dependencies:
-    get-object-value "*"
-    reshow-constant "*"
-    reshow-runtime "*"
-    win-doc "*"
-
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
@@ -3964,9 +3954,9 @@ lodash.throttle@^4.1.1:
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -4191,11 +4181,6 @@ mem@^1.1.0:
   integrity sha1-Xt1StIXKHZAP5kiVUFOZoN+kX3Y=
   dependencies:
     mimic-fn "^1.0.0"
-
-memoize-one@*:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.0.5.tgz#8cd3809555723a07684afafcd6f756072ac75d7e"
-  integrity sha512-ey6EpYv0tEaIbM/nTDOpHciXUvd+ackQrJgEzBwemhZZIWZjcyodqEcrmqDy2BKRTM3a65kKBV4WtLXJDt26SQ==
 
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
@@ -5648,23 +5633,6 @@ reshow-worker@*:
     get-object-value "*"
     organism-react-ajax "*"
     worker-loader "*"
-
-reshow@*:
-  version "0.11.6"
-  resolved "https://registry.yarnpkg.com/reshow/-/reshow-0.11.6.tgz#b0cbd788bbac1798202ce901a9abbc881eb26604"
-  integrity sha512-ODuEfA2U/D3s+UgYE6kTs4KQqqHEZjbUmaiqPT3CIFNYQqjOOB2MHOiAlPTqZaqnS07E6WfTTkLjOMn14wn/fA==
-  dependencies:
-    array.merge "*"
-    call-func "*"
-    get-storage "*"
-    getoffset "*"
-    memoize-one "*"
-    organism-react-ajax "*"
-    organism-react-popup "*"
-    reshow-flux "*"
-    reshow-runtime "*"
-    seturl "*"
-    smooth-scroll-to "*"
 
 resolve-path@^1.4.0:
   version "1.4.0"
