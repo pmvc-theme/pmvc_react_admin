@@ -30,7 +30,7 @@ export {
 export {
     CardView,
     CDN,
-    FormattedJson,
+    FormattedJSON,
     MaterialInput
 } from 'react-atomic-organism';
 
