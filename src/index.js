@@ -44,7 +44,6 @@ export {
     pageStore,
     default as Reshow,
     ReshowComponent,
-    ReshowRealTimeComponent,
     reshow
 } from 'reshow';
 
