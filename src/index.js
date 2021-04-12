@@ -30,8 +30,7 @@ export {
 export {
     CardView,
     CDN,
-    FormattedJSON,
-    MaterialInput
+    FormattedJSON
 } from 'react-atomic-organism';
 
 export {
@@ -43,7 +42,6 @@ export {
     dispatch,
     pageStore,
     default as Reshow,
-    ReshowComponent,
     reshow
 } from 'reshow';
 

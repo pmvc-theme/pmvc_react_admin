@@ -8,7 +8,7 @@ import {
     
 } from 'react-atomic-molecule'; 
 import {
-    FormattedJson
+   FormattedJSON 
 } from 'react-atomic-organism';
 import {
     TabView
@@ -38,9 +38,9 @@ export default class FormPreview extends Component
        let list = null;
        if (this.state.preview) {
            preview = (
-            <FormattedJson atom="div" indent={2} label={this.props.label}>
+            <FormattedJSON atom="div" indent={2} label={this.props.label}>
                 {this.state.preview}
-            </FormattedJson>
+            </FormattedJSON>
            );
        } 
        if (this.state.list) {

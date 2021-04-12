@@ -4,7 +4,7 @@ import {
     Field, 
     Button
 } from 'react-atomic-molecule'; 
-import {FormattedJson} from 'react-atomic-organism';
+import {FormattedJSON} from 'react-atomic-organism';
 
 import FormButton from "../organisms/form_button";
 
@@ -26,7 +26,7 @@ class FormPreview extends Component
     render(){
        let preview = null;
        if (this.state.preview) {
-           preview = (<FormattedJson atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJson>);
+           preview = (<FormattedJSON atom="div" indent={2} label={this.props.label}>{this.state.preview}</FormattedJSON>);
        }               
        const {children, ...others} = this.props;
        const callback = (json) => {
