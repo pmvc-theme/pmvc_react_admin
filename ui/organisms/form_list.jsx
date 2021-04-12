@@ -4,9 +4,7 @@ import {
     Field, 
     Button
 } from 'react-atomic-molecule'; 
-import {
-    List
-} from 'pmvc_react_list';
+import List from 'pmvc_react_list/rv';
 import AdminForm from "../molecules/form";
 
 export default class FormList extends Component
