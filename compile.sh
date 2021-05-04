@@ -28,12 +28,40 @@ develop(){
     CONFIG=$conf $webpack --config webpack.server.js
 }
 
+killBy(){
+    ps -eo pid,args | grep $1 | grep -v grep | awk '{print $1}' | xargs -I{} kill -9 {}
+}
+
+stop(){
+    DIR="$( cd "$(dirname "$0")" ; pwd -P )"
+    killBy ${DIR}/node_modules/.bin/babel 
+    cat webpack.pid | xargs -I{} kill -9 {}
+    npm run clean
+}
+
+watch(){
+    echo "Watch Mode";
+    npm run build:cjs:ui -- --watch &
+    npm run build:cjs:src -- --watch &
+    npm run build:es:ui -- --watch &
+    npm run build:es:src -- --watch &
+}
+
 
 case "$1" in
+  watch)
+    stop
+    watch 
+    ;;
+  stop)
+    stop 
+    ;;
   p)
+    stop 
     production
     ;;
   *)
+    stop 
     develop
     exit
 esac

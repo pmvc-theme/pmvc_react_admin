@@ -7,7 +7,7 @@ class Header extends Component
 {
    render(){
        return (
-            <SemanticUI styles={Styles.container}>
+            <SemanticUI atom="header" styles={Styles.container}>
                 <Brand>{this.props.brand}</Brand>
                 <Nav>{this.props.nav}</Nav>
             </SemanticUI>

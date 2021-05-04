@@ -2,22 +2,28 @@ import React from 'react';
 import Header from '../organisms/header'; 
 
 const OneColumn = (props) =>
-<div>
+<div style={Styles.container}>
     <Header 
         brand={props.brand}
         nav={props.nav}
     />
-    <div style={Styles.container}>
+    <main style={Styles.main}>
         {props.content}
-    </div>
+    </main>
+    <footer>
     {props.children}
+    </footer>
 </div>
 
 export default OneColumn;
 
 const Styles = {
     container: {
-        padding: '0 5px',
-        overflow: 'auto'
+        display: 'flex',
+        flexFlow: 'column',
+        height: '100vh',
+    },
+    main: {
+        flex: 2
     }
 };

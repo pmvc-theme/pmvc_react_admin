@@ -1,6 +1,6 @@
 {
   "name": "pmvc_react_admin",
-  "version": "0.1.53",
+  "version": "0.1.54",
   "description": "pmvc admin theme",
   "main": "./build/cjs/src/index.js",
   "module": "./build/es/src/index.js",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "react": "^16.x",
     "react-dom": "^16.x",
+    "react-virtualized": "*",
     "reshow-app": "*"
   },
   "scripts": {
