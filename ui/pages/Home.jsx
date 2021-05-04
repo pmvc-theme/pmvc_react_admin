@@ -1,7 +1,6 @@
 import React, {Component} from 'react'; 
-import TwoColumnLayout from '../templates/two_columns'; 
-import Menu from '../organisms/menu'; 
-import { reactStyle, Item } from 'react-atomic-molecule'; 
+import TwoColumns from '../templates/TwoColumns'; 
+import { reactStyle, Item, Menu } from 'react-atomic-molecule'; 
 
 class MyMenu extends Component
 {
@@ -23,7 +22,7 @@ class Home extends Component
    render(){
         var menu = <MyMenu />;
         return (
-            <TwoColumnLayout 
+            <TwoColumns 
                 menu={menu}
                 content={"I'm home for admin"} 
                 brand={"brand"}

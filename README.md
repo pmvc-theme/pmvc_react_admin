@@ -4,7 +4,6 @@
 [![Total Downloads](https://poser.pugx.org/pmvc-theme/pmvc_react_admin/downloads)](https://packagist.org/packages/pmvc-theme/pmvc_react_admin) 
 
 # PMVC React admin theme 
-===============
 
 ## Install with Composer
 ### 1. Download composer

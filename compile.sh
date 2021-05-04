@@ -1,32 +1,35 @@
 #!/bin/sh
-find ./assets -name "*.js" | xargs rm -rf
 
-phpc=`DUMP=cli php -r "include('config/config.php');"`
+CHK_PHP=$(which php 2>/dev/null)
+
+if [ ! -z "$CHK_PHP" ]; then
+  conf=`DUMP=cli php -r "include('config/config.php');"`
+else
+  conf='{'
+  conf+='"assetsRoot":"./assets/",'
+  conf+='"devPort": "'${hotPort:-8080}'"'
+  conf+='}'
+fi
+
+echo $conf;
+webpack='npm run webpack --'
 
 production(){
     echo "Production Mode";
-    NODE_ENV=production PHP_CONFIG=$phpc webpack -p 
-    NODE_ENV=production webpack -p --config webpack.node.js
+    npm run build
+    NODE_ENV=production CONFIG=$conf $webpack 
+    NODE_ENV=production CONFIG=$conf $webpack --config webpack.server.js
 }
 
 develop(){
     echo "Develop Mode";
     npm run build
-    #PHP_CONFIG=$phpc webpack
-    #webpack --config webpack.node.js
+    CONFIG=$conf $webpack
+    CONFIG=$conf $webpack --config webpack.server.js
 }
 
-build(){
-    rm -rf build
-    BABEL_ENV=build babel ui -d build/ui
-    BABEL_ENV=build babel src -d build/src
-    mv build/src/list.js ./
-}
 
 case "$1" in
-  build)
-    build 
-    ;;
   p)
     production
     ;;
