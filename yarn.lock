@@ -6594,9 +6594,9 @@ organism-react-animate@*:
     win-doc "*"
 
 organism-react-navigation@*:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/organism-react-navigation/-/organism-react-navigation-0.7.1.tgz#93970b888471f952cc940cc66190fe0f27154368"
-  integrity sha512-Yx+sszAwUg6VsHkL697PDfniHvt6xiBBm6mMESNhc2t8+59NgbbNXrz7QHfi3df3PeWdvAnVY6wBP7paS3NBQw==
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/organism-react-navigation/-/organism-react-navigation-0.7.2.tgz#3aac5fc188e5ea49e450e56c47931e91ea1e7c06"
+  integrity sha512-SUWby4BHCnFelSNOBvBNp1EB4Tke0oY/8RVmUEDFwx76eJ8DsSEVpnflMlJ2ZeZOKC/8dujW+dANAf7Xa5wuaA==
   dependencies:
     call-func "*"
     class-lib "*"
@@ -7270,9 +7270,9 @@ react-atomic-molecule@*:
     win-doc "*"
 
 react-atomic-organism@*:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/react-atomic-organism/-/react-atomic-organism-0.11.4.tgz#fcfdad8c18cc5e206d46750f41639497d6cbb315"
-  integrity sha512-4ZjCYgVLtkpWPocvN3fMY17fHBxjvQmfGowKBIC+50U7Rp1xUN9o9ONbLwtzpfsBqXM9eDGatZsG7Z0wBvxplA==
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/react-atomic-organism/-/react-atomic-organism-0.11.5.tgz#cd7ee67ea3d5774775f07aea0857b2562352b443"
+  integrity sha512-exmqskWGgNgqcKTmO9pu/hGn/W9FuhUfftqYeMMMxhNXg8njPkIQ9e90h1BhmoAWxqZ9MoZF/sZoSKSZ2s31ug==
   dependencies:
     array.merge "*"
     call-func "*"
