@@ -7,7 +7,7 @@ import {
 import { getDocTemplate } from 'organism-react-navigation'; 
 
 import Header from '../organisms/header'; 
-const Doc = getDocTemplate({}, true, {
+const Doc = getDocTemplate({
     sideWidth: 160
 });
 const TwoColumns = (props) =>
