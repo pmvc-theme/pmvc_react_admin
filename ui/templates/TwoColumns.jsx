@@ -4,9 +4,9 @@ import {
     Segment,
     Rail
 } from 'react-atomic-molecule'; 
+import { getDocTemplate } from 'organism-react-navigation'; 
 
 import Header from '../organisms/header'; 
-import { getDocTemplate } from '../templates/DocTemplate'; 
 const Doc = getDocTemplate({}, true, {
     sideWidth: 160
 });
