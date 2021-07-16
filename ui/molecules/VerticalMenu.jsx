@@ -26,6 +26,7 @@ export default VerticalMenu;
 
 const Styles = {
   container: {
+    backgroundColor: '#000',
     width: 0,
     position: "fixed",
     borderRadius: 0,
