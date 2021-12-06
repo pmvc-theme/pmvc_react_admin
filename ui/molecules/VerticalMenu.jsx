@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { mixClass, reactStyle, Menu, SemanticUI } from "react-atomic-molecule";
 
 const VerticalMenu = (props) => {
-  const { style, ...otherProps } = props;
+  const { style, menuStyle, ...otherProps } = props;
   const styles = reactStyle(
     {
       ...Styles.container,
@@ -14,7 +14,7 @@ const VerticalMenu = (props) => {
   return (
     <SemanticUI id="doc-menu" styles={styles}>
       <Menu
-        styles={reactStyle(Styles.menu, false, false)}
+        styles={reactStyle({ ...Styles.menu, ...menuStyle }, false, false)}
         {...otherProps}
         className={mixClass("inverted vertical", props.className)}
       />
@@ -26,7 +26,7 @@ export default VerticalMenu;
 
 const Styles = {
   container: {
-    backgroundColor: '#000',
+    backgroundColor: "#000",
     width: 0,
     position: "fixed",
     borderRadius: 0,
