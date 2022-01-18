@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { mixClass, reactStyle, Menu, SemanticUI } from "react-atomic-molecule";
+import Copyright from "../molecules/Copyright";
 
 const VerticalMenu = (props) => {
   const { style, menuStyle, ...otherProps } = props;
@@ -18,6 +19,7 @@ const VerticalMenu = (props) => {
         {...otherProps}
         className={mixClass("inverted vertical", props.className)}
       />
+      <Copyright year="2022" style={{...Styles.font, textAlign: "center"}} />
     </SemanticUI>
   );
 };
@@ -25,6 +27,9 @@ const VerticalMenu = (props) => {
 export default VerticalMenu;
 
 const Styles = {
+  font: {
+    color: "#fff"
+  },
   container: {
     backgroundColor: "#000",
     width: 0,
