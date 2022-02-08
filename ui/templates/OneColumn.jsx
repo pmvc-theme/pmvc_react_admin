@@ -1,29 +1,24 @@
-import React from 'react'; 
-import Header from '../organisms/header'; 
+import React from "react";
+import { build } from "react-atomic-molecule";
+import Header from "../organisms/header";
 
-const OneColumn = (props) =>
-<div style={Styles.container}>
-    <Header 
-        brand={props.brand}
-        nav={props.nav}
-    />
-    <main style={Styles.main}>
-        {props.content}
-    </main>
-    <footer>
-    {props.children}
-    </footer>
-</div>
+const OneColumn = ({ brand, nav, content, children }) => (
+  <div style={Styles.container}>
+    <Header brand={brand} nav={nav} />
+    <main style={Styles.main}>{build(content)()}</main>
+    <footer>{children}</footer>
+  </div>
+);
 
 export default OneColumn;
 
 const Styles = {
-    container: {
-        display: 'flex',
-        flexFlow: 'column',
-        height: '100vh',
-    },
-    main: {
-        flex: 2
-    }
+  container: {
+    display: "flex",
+    flexFlow: "column",
+    height: "100vh",
+  },
+  main: {
+    flex: 2,
+  },
 };
