@@ -1,14 +1,11 @@
 {
   "name": "pmvc_react_admin",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "pmvc admin theme",
   "main": "./build/cjs/src/index.js",
   "module": "./build/es/src/index.js",
   "repository": "pmvc-theme/pmvc_react_admin",
-  "keywords": [
-    "react",
-    "reactjs"
-  ],
+  "keywords": ["react", "reactjs"],
   "author": "Hill <hill@kimo.com>",
   "license": "MIT",
   "dependencies": {
@@ -37,10 +34,5 @@
     "build": "npm run clean && npm run build:cjs && npm run build:es",
     "prepublish": "npm run build"
   },
-  "files": [
-    "build",
-    "list.js",
-    "package.json",
-    "README.md"
-  ]
+  "files": ["build", "list.js", "package.json", "README.md"]
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { reactStyle, Segment, Rail } from "react-atomic-molecule";
+import { build, Segment, Rail } from "react-atomic-molecule";
 import { getDocTemplate } from "organism-react-navigation";
 
 import Header from "../organisms/header";
@@ -7,14 +7,21 @@ const Doc = getDocTemplate({
   sideWidth: 160,
   active: true,
 });
-const TwoColumns = (props) => {
+const TwoColumns = ({
+  brand,
+  content,
+  contentClassName,
+  children,
+  menu,
+  nav,
+}) => {
   return (
     <div>
-      <Header brand={props.brand} nav={props.nav} />
+      <Header brand={brand} nav={nav} />
       <Doc
-        menu={props.menu}
-        className={props.contentClassName}
-        body={<div style={Styles.body}>{props.content}</div>}
+        menu={menu}
+        className={contentClassName}
+        body={<div style={Styles.body}>{build(content)()}</div>}
       />
     </div>
   );
