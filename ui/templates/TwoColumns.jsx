@@ -16,14 +16,14 @@ const TwoColumns = ({
   nav,
 }) => {
   return (
-    <div>
+    <>
       <Header brand={brand} nav={nav} />
       <Doc
         menu={menu}
         className={contentClassName}
         body={<div style={Styles.body}>{build(content)()}</div>}
       />
-    </div>
+    </>
   );
 };
 
