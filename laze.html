@@ -1,17 +1,29 @@
 <script>
-(function(){
-   var time;
-   var retry=0;
-   time = setInterval(function(){
-        if (retry > 5) {
-            clearInterval(time);
-        }
-        if ('undefined' !== typeof app && 'undefined' !== typeof ReactDOM) {
-            var data = <?php echo json_encode($this->get())?>;
-            ReactDOM.render(new app(data), document.getElementById('app'));
-            clearInterval(time);
-        }
-        retry++;
-   },300);
-}());
+  (function(){
+     var time;
+     var retry=0;
+     time = setInterval(function(){
+          if (++retry > 30) {
+              clearInterval(time);
+              console.log('Retry Failed!!');
+          }
+          if ('undefined' !== typeof Reshow) {
+              var laze = <?php echo $this->toJsonParse($this->get())?>;
+              if (laze.hasOwnProperty('data')) {
+                  setTimeout(function(){
+                    var data = laze.data;
+                    REACT_DATA.lazyData = REACT_DATA.lazyData || {};
+                    for (var i in data) {
+                        if(data.hasOwnProperty(i))
+                        {
+                            REACT_DATA.lazyData[i] = data[i];
+                        }
+                    }
+                    Reshow.update({lazyData: REACT_DATA.lazyData});
+                  }, 300);
+              }
+              clearInterval(time);
+          }
+     }, 200);
+  }());
 </script>
