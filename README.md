@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/pmvc-theme/pmvc_react_admin/tree/main.svg?style=svg)](https://circleci.com/gh/pmvc-theme/pmvc_react_admin/tree/main)
 [![Latest Stable Version](https://poser.pugx.org/pmvc-theme/pmvc_react_admin/v/stable)](https://packagist.org/packages/pmvc-theme/pmvc_react_admin) 
 [![Latest Unstable Version](https://poser.pugx.org/pmvc-theme/pmvc_react_admin/v/unstable)](https://packagist.org/packages/pmvc-theme/pmvc_react_admin) 
 [![License](https://poser.pugx.org/pmvc-theme/pmvc_react_admin/license)](https://packagist.org/packages/pmvc-theme/pmvc_react_admin)
