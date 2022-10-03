@@ -1,7 +1,11 @@
-import React from "react";
+//@ts-check
+
 import { build } from "react-atomic-molecule";
 import Header from "../organisms/header";
 
+/**
+ * @returns {React.ReactElement}
+ */
 const OneColumn = ({ brand, nav, content, children }) => (
   <div style={Styles.container}>
     <Header brand={brand} nav={nav} />
